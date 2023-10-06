@@ -47,7 +47,6 @@ function checkCookie() {
 	let valueStr = getCookie();
 	console.log("valueStr: "+valueStr);
 	if (valueStr != "" && valueStr != undefined) {
-		//varSave = strToDict(valueStr);
 		varSave = JSON.parse(valueStr);
 		console.log("varSave type: "+ typeof varSave);
 		const keys = Object.keys(varSave);
@@ -55,9 +54,7 @@ function checkCookie() {
 			const key = keys[i];
 			const value = varSave[key]
 			console.log(key + ":" + value);
-			if (value != null && key != null) {
-				document.getElementById(key).innerHTML = value;
-			}
+			document.getElementById(key).innerHTML = value;
 		}
 	}			
 }
@@ -76,15 +73,6 @@ function getTodaysDate() {
 	let datestamp = new Date().getTime();
 	let today = datestamp - (datestamp % 86400000);
 	return today;
-}
-function strToDict(str) {
-	strArr = str.split(', ');
-	let result = {};
-	for (let i = 0; i < strArr.length; i++) {
-		let cur = strArr[i].split(':');
-		result[cur[0]] = cur[i];
-	}
-	return result;
 }
 function getDaysRem() {
 	let xend = document.getElementById("xend").value;
