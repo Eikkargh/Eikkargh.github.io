@@ -31,12 +31,10 @@ function getCookie() {
 				c = c.substing(1);
 			}
 			if (c.indexOf(name) == 0) {
-				console.log("Cookie loaded: "+c.substring(name.length, c.length));
 				return c.substring(name.length, c.length);
 			} 
 		}
 	} else {
-		console.log("Cookie not found");
 		return "";
 	}
 }
@@ -47,7 +45,7 @@ function checkCookie() {
 		const keys = Object.keys(varSave);
 		for (let i = 0; i < keys.length; i++) {
 			let key = keys[i];
-			let value = varSave[key]
+			let value = varSave[key];
 			if (value != null) {
 				document.getElementById(key).innerHTML = value;
 			}
