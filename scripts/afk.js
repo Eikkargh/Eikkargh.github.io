@@ -88,7 +88,7 @@ function updateCoin(id) {
 	let st = parseInt(document.getElementById('st'+coin).value);
 	let cu = parseInt(document.getElementById('cu'+coin).value);
 	let sp = parseInt(document.getElementById('sp'+coin).value);
-	if ( !!st && !!cu && !!sp && !!dayslog ) {
+	if ( !!st && !!cu && !!dayslog ) {
 		x = Math.floor((cu - st + sp) / dayslog);
 		document.getElementById('rate'+coin).innerHTML = x;
 		if ( !!rdays ) {
