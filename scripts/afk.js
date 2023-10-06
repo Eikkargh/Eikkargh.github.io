@@ -49,7 +49,9 @@ function checkCookie() {
 	if (valueStr != "" && valueStr != undefined) {
 		varSave = strToDict(valueStr);
 		for (let [key, value] of Object.entries(varSave)) {
-			document.getElementById(key).innerHTML = value;
+			if (value != null){
+				document.getElementById(key).innerHTML = value;
+			}
 		}
 	}			
 }
