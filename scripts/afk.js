@@ -20,9 +20,7 @@ let dayslog = null;
 let exdays = 182;
 
 function getCookie() {
-	console.log("getCookie triggered");
 	let cookie = document.cookie;
-	console.log("cookie: "+cookie);
 	if (cookie != null && cookie != "") {
 		let name = "inputFields=";
 		let decodedCookie = decodeURIComponent(document.cookie);
@@ -43,32 +41,26 @@ function getCookie() {
 	}
 }
 function checkCookie() {
-	console.log("checkCookie triggered");
 	let valueStr = getCookie();
-	console.log("valueStr: "+valueStr);
 	if (valueStr != "" && valueStr != undefined) {
 		varSave = JSON.parse(valueStr);
-		console.log("varSave type: "+ typeof varSave);
 		const keys = Object.keys(varSave);
 		for (let i = 0; i < keys.length; i++) {
 			let key = keys[i];
 			let value = varSave[key]
 			if (value != null) {
-				console.log(key + ":" + value);
 				document.getElementById(key).innerHTML = value;
 			}
 		}
 	}			
 }
 function updateCookie(id) {
-	console.log("updateCookie triggered for: "+id);
 	let value = document.getElementById(id).value;
 	varSave[id] = value;
 	cValue = JSON.stringify(varSave)
 	const d = new Date();
 	d.setTime(d.getTime() + (exdays*24*60*60*1000));
 	let expires = "expires="+d.toUTCString();
-	console.log("expires: "+expires);
 	document.cookie = "inputFields=" + cValue + ";" + expires + ";path=/;domain=" + window.location.hostname;
 }
 function getTodaysDate() {
