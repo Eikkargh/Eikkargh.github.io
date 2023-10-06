@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,shrink-to-fit=yes">
+	<link rel="stylesheet" href="afk-style.css">
+	<title>Eikkargh Projects - AFK Arena</title>
+	<style type="text/css" date-late-css> == $0</style>
+	<script type="text/javascript">
+		let varSave = {
+			"xstart":null,
+			"xend":null,
+			"rstart":null,
+			"sthero":null,
+			"stguild":null,
+			"stlab":null,
+			"stchal":null,
+			"chero":null,
+			"cguild":null,
+			"clab":null,
+			"cchal":null,
+			"sphero":null,
+			"spguild":null,
+			"splab":null,
+			"spchal":null
+		};
+		let rdays = null;
+		let dayslog = null;
+		let exdays = 182;
+		
+		function getCookie() {
+			console.log("getCookie triggered");
+			let cookie = document.cookie;
+			console.log("cookie: "+cookie);
+			if (cookie != null && cookie != "") {
+				let name = "inputFields=";
+				let decodedCookie = decodeURIComponent(document.cookie);
+				let ca = decodedCookie.split(';');
+				for(let i = 0; i < ca.length; i++) {
+					let c = ca[i];
+					while (c.charAt(0) == ' ') {
+						c = c.substing(1);
+					}
+					if (c.indexOf(name) == 0) {
+						console.log("Cookie loaded: "+c.substring(name.length, c.length));
+						return c.substring(name.length, c.length);
+					} 
+				}
+			} else {
+				console.log("Cookie not found");
+				return "";
+			}
+		}
+		function checkCookie() {
+			console.log("checkCookie triggered");
+			let valueStr = getCookie();
+			console.log("valueStr: "+valueStr);
+			if (valueStr != "" && valueStr != undefined) {
+				varSave = strToDict(valueStr);
+				for (let [key, value] of Object.entries(varSave)) {
+					document.getElementById(key).innerHTML = value;
+				}
+			}			
+		}
+		function updateCookie(id) {
+			console.log("updateCookie triggered for: "+id);
+			let value = document.getElementById(id).value;
+			varSave[id] = value;
+			cValue = JSON.stringify(varSave)
+			const d = new Date();
+			d.setTime(d.getTime() + (exdays*24*60*60*1000));
+			let expires = "expires="+d.toUTCString();
+			console.log("expires: "+expires);
+			document.cookie = "inputFields=" + cValue + ";" + expires + ";path=/;domain=" + window.location.hostname;
+		}
+		function getTodaysDate() {
+			let datestamp = new Date().getTime();
+			let today = datestamp - (datestamp % 86400000);
+			return today;
+		}
+		function strToDict(str) {
+			strArr = str.split(', ');
+			let result = {};
+			for (let i = 0; i < strArr.length; i++) {
+				let cur = strArr[i].split(':');
+				result[cur[0]] = cur[i];
+			}
+			return result;
+		}
+		function getDaysRem() {
+			let xend = document.getElementById("xend").value;
+			updateCookie('xend');
+			let xendint = Math.floor(new Date(xend));
+			rdays = (xendint - getTodaysDate()) / 86400000 - 1;
+			document.getElementById("rdays").innerHTML = rdays;
+		}
+		function getDaysLog() {
+			let rstart = document.getElementById("rstart").value;
+			updateCookie('rstart');
+			let rstartint = Math.floor(new Date(rstart));
+			dayslog = (getTodaysDate() - rstartint) / 86400000 + 1;
+			document.getElementById("dayslog").innerHTML = dayslog;
+		}
+		function updateCoin(id) {
+			value = document.getElementById(id).value;
+			updateCookie(id);
+			let field = id.substring(0, 2);
+			let coin = id.substring(2);
+			let st = parseInt(document.getElementById('st'+coin).value);
+			let cu = parseInt(document.getElementById('cu'+coin).value);
+			let sp = parseInt(document.getElementById('sp'+coin).value);
+			if ( !!st && !!cu && !!sp && !!dayslog ) {
+				x = Math.floor((cu - st + sp) / dayslog);
+				document.getElementById('rate'+coin).innerHTML = x;
+				if ( !!rdays ) {
+					y = Math.floor((x * rdays) + cu);
+					document.getElementById('pred'+coin).innerHTML = y;
+				}
+			}
+		}
+	</script>
+</head>
+<body onload="checkCookie()">
+	<div class="title-bar"><h>Eikkargh Projects</h></div>
+	<div class="menu-bar">
+		<a class="menu-item" href="./home.html">Home</a>
+		<a class="menu-item" href="./code.html">Code</a>
+		<a class="menu-item" href="./afk.html">AFK Arena</a>
+		<a class="menu-item" href="./disney.html">Disney Heroes</a>
+		<a class="menu-item" href="./contact.html">Contact</a>
+	</div>
+	<div class="project-container">
+		<div class="title-container">
+			<div class="project-title"><h1>AFK Arena</h1></div>
+			<div><h2>Dimensional Calculator</h2></div>
+			<div class="form-container">
+				<form>
+					<p class="table-row">
+						<label for="rstart">Record Start</label>
+						<input type="date" id="rstart" name="rstart" onchange="getDaysLog()">
+					</p>
+					<p class="table-row">
+						<span class="table-title">Days Logged</span>
+						<span class="outputResult" id="dayslog"></span>
+					</p>
+					<p class="table-row">
+						<label for="xstart">Exchange Start</label>
+						<input type="date" id="xstart" name="xstart" onchange="updateCookie('xstart')">
+					</p>
+					<p class="table-row">
+						<label for="xend">Exchange End</label>
+						<input type="date" id="xend" name="xend" onchange="getDaysRem()">
+					</p>
+					<p class="table-row">
+						<span class="table-title">Days Remaining</span>
+						<span class="outputResult" id="rdays"></span>
+					</p>
+				</form>
+			</div>
+		</div>
+		<div id="guild-image">
+			<img src="./images/afk.jpg" alt="AFK Arene - The Gory Hole">
+		</div>
+	</div>
+	<br class="clear">
+	<div class="content-container">
+		<table>
+			<tr>
+				<th class="table-corner">Coins</th>
+				<th class="tt">Hero</th>
+				<th class="tt">Guild</th>
+				<th class="tt">Labyrinth</th>
+				<th class="tt">Challenge</th>
+			</tr>
+			<tr>
+				<th>Start Quantity</th>
+				<td><input type="number" id="sthero" name="sthero" onchange="updateCoin('sthero')"></td>
+				<td><input type="number" id="stguild" name="stguild" onchange="updateCoin('stguild')"></td>
+				<td><input type="number" id="stlab" name="stlab" onchange="updateCoin('stlab')"></td>
+				<td><input type="number" id="stchal" name="stchal" onchange="updateCoin('stchal')"></td>
+			</tr>
+			<tr>
+				<th>Current Quantity</th>
+				<td><input type="number" id="cuhero" name="cuhero" onchange="updateCoin('cuhero')"></td>
+				<td><input type="number" id="cuguild" name="cuguild" onchange="updateCoin('cuguild')"></td>
+				<td><input type="number" id="culab" name="culab" onchange="updateCoin('culab')"></td>
+				<td><input type="number" id="cuchal" name="cuchal" onchange="updateCoin('cuchal')"></td>
+			</tr>
+			<tr>
+				<th>Spent</th>
+				<td><input type="number" id="sphero" name="sphero" onchange="updateCoin('sphero')"></td>
+				<td><input type="number" id="spguild" name="spguild" onchange="updateCoin('spguild')"></td>
+				<td><input type="number" id="splab" name="splab"  onchange="updateCoin('splab')"></td>
+				<td><input type="number" id="spchal" name="spchal"  onchange="updateCoin('spchal')"></td>		
+			</tr>
+			<tr>
+				<th>Rate Gain/ Day</th>
+				<td><span id="ratehero"></span></td>
+				<td><span id="rateguild"></span></td>
+				<td><span id="ratelab"></span></td>
+				<td><span id="ratechal"></span></td>
+			</tr>
+			<tr>
+				<th>Predicted</th>
+				<td><span id="predhero"></span></td>
+				<td><span id="predguild"></span></td>
+				<td><span id="predlab"></span></td>
+				<td><span id="predchal"></span></td>
+			</tr>
+			<tr>
+				<th>Max Tokens</th>
+				<td>10</td>
+				<td>10</td>
+				<td>50</td>
+				<td>15</td>
+			</tr>
+			<tr>
+				<th>Token Cost</th>
+				<td>4000</td>
+				<td>4000</td>
+				<td>4000</td>
+				<td>13333</td>
+			</tr>
+			<tr>
+				<th>Max Cost</th>
+				<td>40000</td>
+				<td>40000</td>
+				<td>200000</td>
+				<td>199995</td>
+			</tr>
+		</table>
+	</div>
+</body>

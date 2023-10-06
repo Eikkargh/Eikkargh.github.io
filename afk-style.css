@@ -1,0 +1,87 @@
+body{
+	font-family:Arial,sans-serif;
+	background-color:black;
+	color:white;
+}
+/* Static Block */
+.title-bar{
+	background-color:black;
+	text-align:center;
+}
+h{
+	color:white;
+	font-size:36px;
+}
+.menu-bar{
+	display:block;
+	position:relative;
+	padding:5px;
+	background-color:white;
+	font-size:24px;
+}
+.menu-item{
+	display:inline-block;
+	position:relative;
+	padding:5px;
+	color:black;
+}
+/* Project Block */
+.projectcontainer{
+	display:block;
+}
+h1{color:white;}
+h2{color:white;}
+#guild-image{
+	float:left;
+	margin:5px;
+}
+.title-container{
+	display:inline;
+	float:left;
+}
+.project-title{
+	color:#181107;
+}
+.form-container{
+	padding-right:50px;
+	display:table;
+}
+.table-row{
+	display:table-row;
+}
+.table-title{
+	font-weight:bold;
+	padding: 5px 20px;
+}
+label{
+	display:table-cell;
+	padding:5px 20px;
+	font-weight:bold;
+}
+/* Content Block */
+.clear{
+	clear:both;
+}
+.content-container{
+	display:block;
+	text-align:left;
+	margin-top:20px;
+}
+table{
+	float:left;
+	border:1.5px;
+	border-color:white;
+}
+.table-corner{
+	width:130px;
+	text-align:center;
+}
+.tt{
+	text-align:center;
+}
+td{
+	text-align: center;
+}
+.outputResult{
+	display: table-cell;
+}
