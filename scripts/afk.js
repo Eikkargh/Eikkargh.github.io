@@ -50,8 +50,11 @@ function checkCookie() {
 		//varSave = strToDict(valueStr);
 		varSave = JSON.parse(valueStr);
 		console.log("varSave type: "+ typeof varSave);
-		for (const [key, value] of Object.entries(varSave)) {
-			console.log(key+ " " +value);
+		const keys = Object.keys(varSave);
+		for (let i = 0; i < keys.length; i++) {
+			const key = keys[i];
+			const value = varSave[key]
+			console.log(key + ":" + value);
 			if (value != null && key != null) {
 				document.getElementById(key).innerHTML = value;
 			}
