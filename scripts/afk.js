@@ -51,8 +51,8 @@ function checkCookie() {
 		console.log("varSave type: "+ typeof varSave);
 		const keys = Object.keys(varSave);
 		for (let i = 0; i < keys.length; i++) {
-			const key = keys[i];
-			const value = varSave[key]
+			let key = keys[i];
+			let value = varSave[key]
 			if (value != null) {
 				console.log(key + ":" + value);
 				document.getElementById(key).innerHTML = value;
