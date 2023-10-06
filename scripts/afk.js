@@ -53,9 +53,10 @@ function checkCookie() {
 		for (let i = 0; i < keys.length; i++) {
 			const key = keys[i];
 			const value = varSave[key]
-			if (value == null)  value = "" ;
-			console.log(key + ":" + value);
-			document.getElementById(key).innerHTML = value;
+			if (value != null) {
+				console.log(key + ":" + value);
+				document.getElementById(key).innerHTML = value;
+			}
 		}
 	}			
 }
