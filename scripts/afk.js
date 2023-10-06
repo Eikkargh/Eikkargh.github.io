@@ -48,7 +48,7 @@ function checkCookie() {
 	console.log("valueStr: "+valueStr);
 	if (valueStr != "" && valueStr != undefined) {
 		varSave = strToDict(valueStr);
-		console.log("varSave: "+varSave);
+		console.log("varSave type: "+ typeof varSave);
 		for (const [key, value] of Object.entries(varSave)) {
 			console.log(key+ " " +value);
 			if (value != null && key != null) {
