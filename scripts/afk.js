@@ -47,7 +47,7 @@ function checkCookie() {
 			let key = keys[i];
 			let value = varSave[key];
 			if (value != null) {
-				document.getElementById(key).innerHTML = value;
+				document.getElementById(key).defaultValue = value;
 			}
 		}
 	}			
