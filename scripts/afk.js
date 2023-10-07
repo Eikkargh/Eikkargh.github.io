@@ -49,6 +49,7 @@ function checkCookie() {
 			if (value != null) {
 				document.getElementById(key).value = value;
 			}
+		setSaved();
 		}
 	}			
 }
@@ -68,17 +69,21 @@ function getTodaysDate() {
 }
 function getDaysRem() {
 	let xend = document.getElementById("xend").value;
-	updateCookie('xend');
-	let xendint = Math.floor(new Date(xend));
-	rdays = (xendint - getTodaysDate()) / 86400000 - 1;
-	document.getElementById("rdays").innerHTML = rdays;
+	if ( xend != null && xend != "" ){
+		updateCookie('xend');
+		let xendint = Math.floor(new Date(xend));
+		rdays = (xendint - getTodaysDate()) / 86400000 - 1;
+		document.getElementById("rdays").innerHTML = rdays;
+	}
 }
 function getDaysLog() {
 	let rstart = document.getElementById("rstart").value;
-	updateCookie('rstart');
-	let rstartint = Math.floor(new Date(rstart));
-	dayslog = (getTodaysDate() - rstartint) / 86400000 + 1;
-	document.getElementById("dayslog").innerHTML = dayslog;
+	if rstart != null && rstart != "") {
+		updateCookie('rstart');
+		let rstartint = Math.floor(new Date(rstart));
+		dayslog = (getTodaysDate() - rstartint) / 86400000 + 1;
+		document.getElementById("dayslog").innerHTML = dayslog;
+	}
 }
 function updateCoin(id) {
 	value = document.getElementById(id).value;
@@ -88,15 +93,31 @@ function updateCoin(id) {
 	let st = parseInt(document.getElementById('st'+coin).value);
 	let cu = parseInt(document.getElementById('cu'+coin).value);
 	let sp = parseInt(document.getElementById('sp'+coin).value);
-	if ( sp == "" ) {
-		sp = 0;
-	}
 	if ( !!st && !!cu && !!dayslog ) {
 		x = Math.floor((cu - st + sp) / dayslog);
 		document.getElementById('rate'+coin).innerHTML = x;
 		if ( !!rdays ) {
 			y = Math.floor((x * rdays) + cu);
 			document.getElementById('pred'+coin).innerHTML = y;
+		}
+	}
+}
+function setSaved() {
+	getDaysRem();
+	getDaysLog();
+	const coins = {hero, guild, lab, chal};
+	for ( let i = 0; i < coins.lenth; i++) {
+		let coin = coins[i];
+		let st = parseInt(varSave('st'+coin));
+		let cu = parseInt(varSave('cu'+coin));
+		let sp = parseInt(varSave('sp'+coin));
+		if ( !!st && !!cu && !!dayslog ) {
+			x = Math.floor((cu - st + sp) / dayslog);
+			document.getElementById('rate'+coin).innerHTML = x;
+			if ( !!rdays ) {
+				y = Math.floor((x * rdays) + cu);
+				document.getElementById('pred'+coin).innerHTML = y;
+			}
 		}
 	}
 }
