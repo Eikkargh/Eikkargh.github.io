@@ -78,7 +78,7 @@ function getDaysRem() {
 }
 function getDaysLog() {
 	let rstart = document.getElementById("rstart").value;
-	if rstart != null && rstart != "") {
+	if (rstart != null && rstart != "") {
 		updateCookie('rstart');
 		let rstartint = Math.floor(new Date(rstart));
 		dayslog = (getTodaysDate() - rstartint) / 86400000 + 1;
