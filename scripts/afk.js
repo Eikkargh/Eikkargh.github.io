@@ -98,6 +98,7 @@ function updateCoin(id) {
 		let cu = parseInt(document.getElementById('cu'+coin).value);
 		let sp = parseInt(document.getElementById('sp'+coin).value);
 	}
+	console.log("pre for loop");
 	for ( let i = 0; i < coins.lenth; i++) {
 		console.log("for loop count: "+i);
 		if (id = "refresh") {
