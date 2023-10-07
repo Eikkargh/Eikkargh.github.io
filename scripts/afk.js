@@ -103,14 +103,11 @@ function setCoin(id) {
 	}
 }
 function updateCoin() {
-	let coins = ["hero","guild","lab","chal"];
-	let fields = ["st","cu","sp"];
+	let coinsCalc = ["sthero","stguild","stlab","stchal","cuhero","cuguild","culab","cuchal","sphero","spguild","splab","spchal"];
 	for (i = 0; i < coins.length; i++){
-		let coin = coins[i];
-		for (j = 0; j < fields.length; j++){
-			let field = fields[j];
-			value = varSave[field+coin];
-			document.getElementById(field+coin).value = value;
+		let coin = coinsCalc[i];
+		value = varSave[coin];
+		document.getElementById(coin).value = value;
 		}
 	}
 }
