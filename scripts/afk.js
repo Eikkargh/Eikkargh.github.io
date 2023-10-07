@@ -49,7 +49,7 @@ function checkCookie() {
 			if (value != null) {
 				document.getElementById(key).value = value;
 			}
-		setSaved();
+		updateCoin("refresh");
 		}
 	}			
 }
@@ -86,44 +86,30 @@ function getDaysLog() {
 	}
 }
 function updateCoin(id) {
-	value = document.getElementById(id).value;
-	updateCookie(id);
-	let field = id.substring(0, 2);
-	let coin = id.substring(2);
-	let st = parseInt(document.getElementById('st'+coin).value);
-	let cu = parseInt(document.getElementById('cu'+coin).value);
-	let sp = parseInt(document.getElementById('sp'+coin).value);
-	console.log(sp);
-	if ( !!st && !!cu && !!dayslog ) {
-		x = Math.floor((cu - st + sp) / dayslog);
-		document.getElementById('rate'+coin).innerHTML = x;
-		if ( !!rdays ) {
-			y = Math.floor((x * rdays) + cu);
-			document.getElementById('pred'+coin).innerHTML = y;
-		}
-	}
-}
-function setSaved() {
-	getDaysRem();
-	getDaysLog();
-	const coins = ["hero", "guild", "lab", "chal"];
-	for ( let i = 0; i < coins.lenth; i++) {
-		console.log("setDave for loop started");
+	if ( id == "refresh" ) {
+		getDaysRem();
+		getDaysLog();
+		let coins = ["hero", "guild", "lab", "chal"];
 		let coin = coins[i];
 		let st = parseInt(varSave('st'+coin));
 		let cu = parseInt(varSave('cu'+coin));
 		let sp = parseInt(varSave('sp'+coin));
+	} else {
+		updateCookie(id);
+		let coin = id.substring(2);
+		let coins = [coin];
+		let st = parseInt(document.getElementById('st'+coin).value);
+		let cu = parseInt(document.getElementById('cu'+coin).value);
+		let sp = parseInt(document.getElementById('sp'+coin).value);
+	}
+	for ( let i = 0; i < coins.lenth; i++) {
 		if ( !!st && !!cu && !!dayslog ) {
 			x = Math.floor((cu - st + sp) / dayslog);
-			console.log(x);
 			document.getElementById('rate'+coin).innerHTML = x;
 			if ( !!rdays ) {
 				y = Math.floor((x * rdays) + cu);
-				console.log(y);
 				document.getElementById('pred'+coin).innerHTML = y;
 			}
-		} else {
-			console.log(st + " " + cu + " " + sp + " "+ dayslog + " " + rdays);
 		}
 	}
 }
