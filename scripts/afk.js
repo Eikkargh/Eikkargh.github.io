@@ -106,11 +106,15 @@ function updateCoin(id) {
 		}
 		if ( !!st && !!cu && !!sp && !!dayslog ) {
 			let x = Math.floor((cu - st + sp) / dayslog);
+			console.log("x: "+x);
 			document.getElementById('rate'+coin).innerHTML = x;
 			if ( !!rdays ) {
 				let y = Math.floor((x * rdays) + cu);
+				console.log("y: "+y);
 				document.getElementById('pred'+coin).innerHTML = y;
 			}
+			console.log("rdays not valid: "+rdays);
 		}
+		console.log("Something invalid: st="+st+" cu="+cu+" sp="+sp+" dayslog="+dayslog);
 	}
 }
