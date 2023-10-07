@@ -82,7 +82,7 @@ function getDaysLog() {
 		updateCookie('rstart');
 		let rstartint = Math.floor(new Date(rstart));
 		dayslog = (getTodaysDate() - rstartint) / 86400000 + 1;
-		document.getElementById("dayslog").textContent = dayslog;
+		document.getElementById("dayslog").innerHTML = dayslog;
 	}
 }
 function updateCoin(id) {
