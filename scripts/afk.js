@@ -88,6 +88,7 @@ function getDaysLog() {
 	}
 }
 function updateCoin(id) {
+	console.log("updateCoin triggered: "+id);
 	let coins = ["hero", "guild", "lab", "chal"];
 	if ( id != "refresh" ) {
 		updateCookie(id);
