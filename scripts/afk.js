@@ -90,7 +90,7 @@ function getDaysLog() {
 function updateCoin(id) {
 	if ( id == "refresh" ) {
 		let coins = ["hero", "guild", "lab", "chal"];
-		let coin = coins[i];
+		
 		let st = parseInt(varSave('st'+coin));
 		let cu = parseInt(varSave('cu'+coin));
 		let sp = parseInt(varSave('sp'+coin));
@@ -103,7 +103,10 @@ function updateCoin(id) {
 		let sp = parseInt(document.getElementById('sp'+coin).value);
 	}
 	for ( let i = 0; i < coins.lenth; i++) {
-		if ( !!st && !!cu && !!dayslog ) {
+		if (id = "refresh") {
+			let coin = coins[i];
+		}
+		if ( !!st && !!cu && !!sp && !!dayslog ) {
 			x = Math.floor((cu - st + sp) / dayslog);
 			document.getElementById('rate'+coin).innerHTML = x;
 			if ( !!rdays ) {
