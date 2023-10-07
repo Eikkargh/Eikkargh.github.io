@@ -95,10 +95,10 @@ function updateCoin(id) {
 	let sp = parseInt(document.getElementById('sp'+coin).value);
 	if ( !!st && !!cu && !!dayslog ) {
 		x = Math.floor((cu - st + sp) / dayslog);
-		document.getElementById('rate'+coin).textContent = x;
+		document.getElementById('rate'+coin).innerHTML = x;
 		if ( !!rdays ) {
 			y = Math.floor((x * rdays) + cu);
-			document.getElementById('pred'+coin).textContent = y;
+			document.getElementById('pred'+coin).innerHTML = y;
 		}
 	}
 }
@@ -115,11 +115,11 @@ function setSaved() {
 		if ( !!st && !!cu && !!dayslog ) {
 			x = Math.floor((cu - st + sp) / dayslog);
 			console.log(x);
-			document.getElementById('rate'+coin).textContent = x;
+			document.getElementById('rate'+coin).innerHTML = x;
 			if ( !!rdays ) {
 				y = Math.floor((x * rdays) + cu);
 				console.log(y);
-				document.getElementById('pred'+coin).textContent = y;
+				document.getElementById('pred'+coin).innerHTML = y;
 			}
 		} else {
 			console.log(st + " " + cu + " " + sp + " "+ dayslog + " " + rdays);
