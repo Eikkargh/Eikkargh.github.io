@@ -107,6 +107,7 @@ function setSaved() {
 	getDaysLog();
 	const coins = ["hero", "guild", "lab", "chal"];
 	for ( let i = 0; i < coins.lenth; i++) {
+		console.log("setDave for loop started");
 		let coin = coins[i];
 		let st = parseInt(varSave('st'+coin));
 		let cu = parseInt(varSave('cu'+coin));
