@@ -109,8 +109,8 @@ function updateCoin() {
 		["stlab","culab","splab"],
 		["stchal","cuchal","spchal"]
 	]
-	for (let i = 0; i < coinCalc.length; i++){
-		for (let j = 0; j < coinCalc[i].length; j++) {
+	for (let i = 0; i < coinsCalc.length; i++){
+		for (let j = 0; j < coinsCalc[i].length; j++) {
 			let name = coinsCalc[i][j];
 			console.log("working on: " + name);
 			let field = name.substring(0,2);
