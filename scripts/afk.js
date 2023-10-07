@@ -105,7 +105,7 @@ function updateCoin(id) {
 function setSaved() {
 	getDaysRem();
 	getDaysLog();
-	const coins = {"hero", "guild", "lab", "chal"};
+	const coins = ["hero", "guild", "lab", "chal"];
 	for ( let i = 0; i < coins.lenth; i++) {
 		let coin = coins[i];
 		let st = parseInt(varSave('st'+coin));
