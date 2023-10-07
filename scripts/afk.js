@@ -49,6 +49,8 @@ function checkCookie() {
 			if (value != null) {
 				document.getElementById(key).value = value;
 			}
+		getDaysRem();
+		getDaysLog();
 		updateCoin("refresh");
 		}
 	}			
@@ -87,8 +89,6 @@ function getDaysLog() {
 }
 function updateCoin(id) {
 	if ( id == "refresh" ) {
-		getDaysRem();
-		getDaysLog();
 		let coins = ["hero", "guild", "lab", "chal"];
 		let coin = coins[i];
 		let st = parseInt(varSave('st'+coin));
