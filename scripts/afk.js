@@ -113,9 +113,11 @@ function setSaved() {
 		let sp = parseInt(varSave('sp'+coin));
 		if ( !!st && !!cu && !!dayslog ) {
 			x = Math.floor((cu - st + sp) / dayslog);
+			console.log(x);
 			document.getElementById('rate'+coin).innerHTML = x;
 			if ( !!rdays ) {
 				y = Math.floor((x * rdays) + cu);
+				console.log(y);
 				document.getElementById('pred'+coin).innerHTML = y;
 			}
 		}
