@@ -99,6 +99,7 @@ function updateCoin(id) {
 		let sp = parseInt(document.getElementById('sp'+coin).value);
 	}
 	for ( let i = 0; i < coins.lenth; i++) {
+		console.log("for loop count: "+i);
 		if (id = "refresh") {
 			let coin = coins[i];
 			let st = parseInt(varSave('st'+coin));
