@@ -103,10 +103,27 @@ function setCoin(id) {
 	}
 }
 function updateCoin() {
-	let coinsCalc = ["sthero","stguild","stlab","stchal","cuhero","cuguild","culab","cuchal","sphero","spguild","splab","spchal"];
-	for (i = 0; i < coinsCalc.length; i++){
-		let coin = coinsCalc[i];
-		value = varSave[coin];
-		document.getElementById(coin).value = value;
+	let coinsCalc = [
+		["sthero","cuhero","sphero"],
+		["stguild","cuguild","spguild"],
+		["stlab","culab","splab"],
+		["stchal","cuchal","spchal"]
+	]
+	for (let i = 0; i < coinsCalc.length; i++){
+		for (let j = 0; i < coinsCalc.length; j++) {
+			let name = coinsCalc[i][j];
+			let field = name.substring(0,2);
+			let coin = name.substring(2);
+			let value = varSave(coin);
+			eval(field + "= value");
+		}
+		if ( !!st && !!cu && !!dayslog ) {
+			let x = Math.floor((cu - st + sp) / dayslog);
+			document.getElementById('rate' + coin).innerHTML = x;
+			if ( !!rdays ) {
+				let y = Math.floor((x * rdays) + cu);
+				document.getElementById('pred' + coin).innerHTML = y;
+			}
+		}
 	}
 }
