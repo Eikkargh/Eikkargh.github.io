@@ -121,7 +121,7 @@ function setSaved() {
 				document.getElementById('pred'+coin).innerHTML = y;
 			}
 		} else {
-			console.log(st + " " + cu + " " + sp);
+			console.log(st + " " + cu + " " + sp + " "+ dayslog + " " + rdays);
 		}
 	}
 }
