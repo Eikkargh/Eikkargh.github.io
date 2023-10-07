@@ -88,13 +88,7 @@ function getDaysLog() {
 	}
 }
 function updateCoin(id) {
-	if ( id == "refresh" ) {
-		let coins = ["hero", "guild", "lab", "chal"];
-		
-		let st = parseInt(varSave('st'+coin));
-		let cu = parseInt(varSave('cu'+coin));
-		let sp = parseInt(varSave('sp'+coin));
-	} else {
+	if ( id != "refresh" ) {
 		updateCookie(id);
 		let coin = id.substring(2);
 		let coins = [coin];
@@ -104,7 +98,11 @@ function updateCoin(id) {
 	}
 	for ( let i = 0; i < coins.lenth; i++) {
 		if (id = "refresh") {
+			let coins = ["hero", "guild", "lab", "chal"];
 			let coin = coins[i];
+			let st = parseInt(varSave('st'+coin));
+			let cu = parseInt(varSave('cu'+coin));
+			let sp = parseInt(varSave('sp'+coin));
 		}
 		if ( !!st && !!cu && !!sp && !!dayslog ) {
 			x = Math.floor((cu - st + sp) / dayslog);
