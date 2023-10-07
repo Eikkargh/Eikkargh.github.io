@@ -105,10 +105,10 @@ function updateCoin(id) {
 			let sp = parseInt(varSave('sp'+coin));
 		}
 		if ( !!st && !!cu && !!sp && !!dayslog ) {
-			x = Math.floor((cu - st + sp) / dayslog);
+			let x = Math.floor((cu - st + sp) / dayslog);
 			document.getElementById('rate'+coin).innerHTML = x;
 			if ( !!rdays ) {
-				y = Math.floor((x * rdays) + cu);
+				let y = Math.floor((x * rdays) + cu);
 				document.getElementById('pred'+coin).innerHTML = y;
 			}
 		}
