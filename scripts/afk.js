@@ -108,7 +108,7 @@ function updateCoin() {
 	for (i = 0; i < coins.length; i++){
 		let coin = coins[i];
 		for (j = 0; j < fields.length; j++){
-			let fields = field[j];
+			let field = fields[j];
 			value = varSave[field+coin];
 			document.getElementById(field+coin).value = value;
 		}
