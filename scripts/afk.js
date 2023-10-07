@@ -104,8 +104,8 @@ function setCoin(id) {
 }
 function updateCoin() {
 	let coinsCalc = ["sthero","stguild","stlab","stchal","cuhero","cuguild","culab","cuchal","sphero","spguild","splab","spchal"];
-	for (i = 0; i < coins.length; i++){
-		let coin = coinsCalc[i];
+	for (i = 0; i < coinsCalc.length; i++){
+		let coins = coinsCalc[i];
 		value = varSave[coin];
 		document.getElementById(coin).value = value;
 	}
