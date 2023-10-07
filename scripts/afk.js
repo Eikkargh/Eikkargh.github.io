@@ -51,7 +51,7 @@ function checkCookie() {
 			}
 		getDaysRem();
 		getDaysLog();
-		updateCoin("refresh");
+		updateCoin();
 		}
 	}			
 }
@@ -87,37 +87,21 @@ function getDaysLog() {
 		document.getElementById("dayslog").innerHTML = dayslog;
 	}
 }
-function updateCoin(id) {
-	console.log("updateCoin triggered: "+id);
-	let coins = ["hero", "guild", "lab", "chal"];
-	if ( id != "refresh" ) {
-		updateCookie(id);
-		let coin = id.substring(2);
-		let coins = [coin];
-		let st = parseInt(document.getElementById('st'+coin).value);
-		let cu = parseInt(document.getElementById('cu'+coin).value);
-		let sp = parseInt(document.getElementById('sp'+coin).value);
-	}
-	console.log("pre for loop");
-	for ( let i = 0; i < coins.lenth; i++) {
-		console.log("for loop count: "+i);
-		if (id = "refresh") {
-			let coin = coins[i];
-			let st = parseInt(varSave('st'+coin));
-			let cu = parseInt(varSave('cu'+coin));
-			let sp = parseInt(varSave('sp'+coin));
+function setCoin(id) {
+	updateCookie(id);
+	let coin = id.substring(2);
+	let coins = [coin];
+	let st = parseInt(document.getElementById('st'+coin).value);
+	let cu = parseInt(document.getElementById('cu'+coin).value);
+	let sp = parseInt(document.getElementById('sp'+coin).value);		
+	if ( !!st && !!cu && !!sp && !!dayslog ) {
+		let x = Math.floor((cu - st + sp) / dayslog);
+		document.getElementById('rate'+coin).innerHTML = x;
+		if ( !!rdays ) {
+			let y = Math.floor((x * rdays) + cu);
 		}
-		if ( !!st && !!cu && !!sp && !!dayslog ) {
-			let x = Math.floor((cu - st + sp) / dayslog);
-			console.log("x: "+x);
-			document.getElementById('rate'+coin).innerHTML = x;
-			if ( !!rdays ) {
-				let y = Math.floor((x * rdays) + cu);
-				console.log("y: "+y);
-				document.getElementById('pred'+coin).innerHTML = y;
-			}
-			console.log("rdays not valid: "+rdays);
-		}
-		console.log("Something invalid: st="+st+" cu="+cu+" sp="+sp+" dayslog="+dayslog);
 	}
+}
+function updateCoin() {
+	
 }
