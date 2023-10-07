@@ -103,5 +103,14 @@ function setCoin(id) {
 	}
 }
 function updateCoin() {
-	
+	let coins = ["hero","guild","lab","chal"];
+	let fields = ["st","cu","sp"];
+	for (i = 0; i < coins.length; i++){
+		let coin = coins[i];
+		for (j = 0; j < fields.length; j++){
+			let fields = field[j];
+			value = varSave[field+coin];
+			document.getElementById(field+coin).value = value;
+		}
+	}
 }
