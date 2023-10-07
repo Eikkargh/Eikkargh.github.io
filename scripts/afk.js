@@ -108,6 +108,5 @@ function updateCoin() {
 		let coin = coinsCalc[i];
 		value = varSave[coin];
 		document.getElementById(coin).value = value;
-		}
 	}
 }
