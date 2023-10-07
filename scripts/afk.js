@@ -120,6 +120,8 @@ function setSaved() {
 				console.log(y);
 				document.getElementById('pred'+coin).innerHTML = y;
 			}
+		} else {
+			console.log(st + " " + cu + " " + sp);
 		}
 	}
 }
