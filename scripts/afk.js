@@ -82,7 +82,7 @@ function getDaysLog() {
 		updateCookie('rstart');
 		let rstartint = Math.floor(new Date(rstart));
 		dayslog = (getTodaysDate() - rstartint) / 86400000 + 1;
-		document.getElementById("dayslog").innerHTML = dayslog;
+		document.getElementById("dayslog").textContent = dayslog;
 	}
 }
 function updateCoin(id) {
@@ -95,10 +95,10 @@ function updateCoin(id) {
 	let sp = parseInt(document.getElementById('sp'+coin).value);
 	if ( !!st && !!cu && !!dayslog ) {
 		x = Math.floor((cu - st + sp) / dayslog);
-		document.getElementById('rate'+coin).innerHTML = x;
+		document.getElementById('rate'+coin).textContent = x;
 		if ( !!rdays ) {
 			y = Math.floor((x * rdays) + cu);
-			document.getElementById('pred'+coin).innerHTML = y;
+			document.getElementById('pred'+coin).textContent = y;
 		}
 	}
 }
@@ -115,11 +115,11 @@ function setSaved() {
 		if ( !!st && !!cu && !!dayslog ) {
 			x = Math.floor((cu - st + sp) / dayslog);
 			console.log(x);
-			document.getElementById('rate'+coin).innerHTML = x;
+			document.getElementById('rate'+coin).textContent = x;
 			if ( !!rdays ) {
 				y = Math.floor((x * rdays) + cu);
 				console.log(y);
-				document.getElementById('pred'+coin).innerHTML = y;
+				document.getElementById('pred'+coin).textContent = y;
 			}
 		} else {
 			console.log(st + " " + cu + " " + sp + " "+ dayslog + " " + rdays);
