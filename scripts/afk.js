@@ -114,7 +114,7 @@ function updateCoin() {
 			let name = coinsCalc[i][j];
 			let field = name.substring(0,2);
 			let coin = name.substring(2);
-			let value = varSave(coin);
+			let value = varSave[coin];
 			eval(field + "= value");
 		}
 		if ( !!st && !!cu && !!dayslog ) {
