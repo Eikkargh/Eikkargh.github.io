@@ -119,18 +119,14 @@ function updateCoin() {
 			let field = name.substring(0,2);
 			coin = name.substring(2);
 			let value = varSave[field+coin];
-			console.log(field+ " " +value);
-			eval(field + "= value");
-			console.log("eval(field)=" +eval(field)+ " field=" +field+ " value=" +value);
-			
+			eval(field + "= parseIn(value)");
 		}
-		console.log("Values: st=" +st+ " cu=" +cu+ " sp=" +sp+ " dayslog=" +dayslog+ " rdays" +rdays);
 		if ( !!st && !!cu && !!dayslog ) {
-			let x = parseInt((cu - st + sp) / dayslog);
+			let x = (cu - st + sp) / dayslog;
 			console.log("updateCoin x: "+ x);
 			document.getElementById('rate'+coin).innerHTML = x;
 			if ( !!rdays ) {
-				let y = parseInt((x * rdays) + cu);
+				let y = (x * rdays) + cu;
 				console.log("updateCoin y: "+ y);
 				document.getElementById('pred'+coin).innerHTML = y;
 			}
