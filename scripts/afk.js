@@ -109,9 +109,9 @@ function updateCoin() {
 		["stlab","culab","splab"],
 		["stchal","cuchal","spchal"]
 	]
-	let st = "";
-	let cu = "";
-	let sp = "";
+	let st = 0;
+	let cu = 0;
+	let sp = 0;
 	for (let i = 0; i < coinsCalc.length; i++){
 		for (let j = 0; j < coinsCalc[i].length; j++) {
 			let name = coinsCalc[i][j];
