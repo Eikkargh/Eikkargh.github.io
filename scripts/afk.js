@@ -123,11 +123,9 @@ function updateCoin() {
 		}
 		if ( !!st && !!cu && !!dayslog ) {
 			let x = parseInt((cu - st + sp) / dayslog);
-			console.log("updateCoin x: "+ x);
 			document.getElementById('rate'+coin).innerHTML = x;
 			if ( !!rdays ) {
 				let y = parseInt((x * rdays) + cu);
-				console.log("updateCoin y: "+ y);
 				document.getElementById('pred'+coin).innerHTML = y;
 			}
 		}
