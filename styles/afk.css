@@ -59,8 +59,8 @@ td{
 	display: table-cell;
 }
 .result{
-	color: red;
+	color: green;
 }
 .target{
-	color: green;
+	color: red;
 }
