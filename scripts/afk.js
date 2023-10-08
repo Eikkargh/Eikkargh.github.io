@@ -95,13 +95,9 @@ function setCoin(id) {
 	let sp = parseInt(document.getElementById('sp'+coin).value);		
 	if ( !!st && !!cu && !!dayslog ) {
 		let x = Math.floor((cu - st + sp) / dayslog);
-		rateCoin = "rate" + coin;
-		console.log("setCoin:" + rateCoin + " x:" + x);
 		document.getElementById(rateCoin).innerHTML = x;
 		if ( !!rdays ) {
 			let y = Math.floor((x * rdays) + cu);
-			predCoin = "pred" + coin;
-			console.log("setCoin:" + predCoin + " y:" + y);
 			document.getElementById("pred"+coin).innerHTML = y;
 		}
 	}
@@ -119,8 +115,9 @@ function updateCoin() {
 			let field = name.substring(0,2);
 			let coin = name.substring(2);
 			let value = varSave[coin];
-			eval(field + "= value");
+			eval("let " + field + "= value");
 		}
+		console.log("
 		if ( !!st && !!cu && !!dayslog ) {
 			let x = Math.floor((cu - st + sp) / dayslog);
 			console.log("updateCoin x: "+ x);
