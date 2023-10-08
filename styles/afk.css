@@ -1,60 +1,66 @@
 /* Project Block */
 .projectcontainer{
-	display:block;
+	display: block;
 }
-h1{color:white;}
-h2{color:white;}
+h1{color: white;}
+h2{color: white;}
 #guild-image{
-	float:left;
-	margin:5px;
+	float: left;
+	margin: 5px;
 }
 .title-container{
-	display:inline;
-	float:left;
+	display: inline;
+	float: left;
 }
 .project-title{
-	color:#181107;
+	text-color: #181107;
 }
 .form-container{
-	padding-right:50px;
-	display:table;
+	padding-right: 50px;
+	display: table;
 }
 .table-row{
-	display:table-row;
+	display: table-row;
 }
 .table-title{
-	font-weight:bold;
+	font-weight: bold;
 	padding: 5px 20px;
 }
 label{
-	display:table-cell;
-	padding:5px 20px;
-	font-weight:bold;
+	display: table-cell;
+	padding: 5px 20px;
+	font-weight: bold;
 }
 /* Content Block */
 .clear{
-	clear:both;
+	clear: both;
 }
 .content-container{
-	display:block;
-	text-align:left;
-	margin-top:20px;
+	display: block;
+	text-align: left;
+	margin-top: 20px;
 }
 table{
-	float:left;
-	border:1.5px;
-	border-color:white;
+	float: left;
+	border: 1.5px;
+	border-color: white;
 }
 .table-corner{
 	width:130px;
-	text-align:center;
+	text-align: center;
 }
 .tt{
-	text-align:center;
+	text-align: center;
 }
 td{
 	text-align: center;
 }
 .outputResult{
 	display: table-cell;
+}
+.result{
+	text-color: red;
+}
+.target{
+	text-color: green;
 }
