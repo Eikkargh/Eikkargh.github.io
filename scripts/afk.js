@@ -119,7 +119,7 @@ function updateCoin() {
 			let field = name.substring(0,2);
 			coin = name.substring(2);
 			let value = varSave[field+coin];
-			eval(field + "= parseIn(value)");
+			eval(field + "= parseInt(value)");
 		}
 		if ( !!st && !!cu && !!dayslog ) {
 			let x = (cu - st + sp) / dayslog;
