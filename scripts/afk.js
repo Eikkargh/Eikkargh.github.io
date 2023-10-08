@@ -117,7 +117,6 @@ function updateCoin() {
 			let value = varSave[coin];
 			eval("let " + field + "= value");
 		}
-		console.log("
 		if ( !!st && !!cu && !!dayslog ) {
 			let x = Math.floor((cu - st + sp) / dayslog);
 			console.log("updateCoin x: "+ x);
