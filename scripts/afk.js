@@ -95,12 +95,14 @@ function setCoin(id) {
 	let sp = parseInt(document.getElementById('sp'+coin).value);		
 	if ( !!st && !!cu && !!dayslog ) {
 		let x = Math.floor((cu - st + sp) / dayslog);
-		console.log("setCoin x: "+ x);
-		document.getElementById('rate'+coin).innerHTML = x;
+		rateCoin = "rate" + coin;
+		console.log("setCoin:" + rateCoin + " x:" + x);
+		document.getElementById(rateCoin).innerHTML = x;
 		if ( !!rdays ) {
 			let y = Math.floor((x * rdays) + cu);
-			console.log("setCoin y: "+ y);
-			document.getElementById('pred'+coin).innerHTML = y;
+			predCoin = "pred" + coin;
+			console.log("setCoin:" + predCoin + " y:" + y);
+			document.getElementById("pred"+coin).innerHTML = y;
 		}
 	}
 }
