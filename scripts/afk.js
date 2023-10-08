@@ -126,11 +126,11 @@ function updateCoin() {
 		}
 		console.log("Values: st=" +st+ " cu=" +cu+ " sp=" +sp+ " dayslog=" +dayslog+ " rdays" +rdays);
 		if ( !!st && !!cu && !!dayslog ) {
-			let x = Math.floor((cu - st + sp) / dayslog);
+			let x = parseInt((cu - st + sp) / dayslog);
 			console.log("updateCoin x: "+ x);
 			document.getElementById('rate'+coin).innerHTML = x;
 			if ( !!rdays ) {
-				let y = Math.floor((x * rdays) + cu);
+				let y = parseInt((x * rdays) + cu);
 				console.log("updateCoin y: "+ y);
 				document.getElementById('pred'+coin).innerHTML = y;
 			}
