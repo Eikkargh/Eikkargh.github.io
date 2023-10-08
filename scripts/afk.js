@@ -118,7 +118,7 @@ function updateCoin() {
 			let field = name.substring(0,2);
 			let coin = name.substring(2);
 			let value = varSave[coin];
-			console.log(field+ " " +value");
+			console.log(field+ " " +value);
 			eval(field + "= value");
 			console.log("eval(field)=" +eval(field)+ " field=" +field+ " value=" +value);
 			
