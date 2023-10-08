@@ -49,10 +49,10 @@ function checkCookie() {
 			if (value != null) {
 				document.getElementById(key).value = value;
 			}
+		}
 		getDaysRem();
 		getDaysLog();
 		updateCoin();
-		}
 	}			
 }
 function updateCookie(id) {
