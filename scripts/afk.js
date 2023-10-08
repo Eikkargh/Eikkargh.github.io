@@ -109,13 +109,16 @@ function updateCoin() {
 		["stlab","culab","splab"],
 		["stchal","cuchal","spchal"]
 	]
+	let st = "";
+	let cu = "";
+	let sp = "";
 	for (let i = 0; i < coinsCalc.length; i++){
 		for (let j = 0; j < coinsCalc[i].length; j++) {
 			let name = coinsCalc[i][j];
 			let field = name.substring(0,2);
 			let coin = name.substring(2);
 			let value = varSave[coin];
-			eval("let " + field + "= value");
+			eval(field + "= value");
 		}
 		if ( !!st && !!cu && !!dayslog ) {
 			let x = Math.floor((cu - st + sp) / dayslog);
