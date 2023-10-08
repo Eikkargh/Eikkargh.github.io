@@ -1,4 +1,3 @@
-# Eikkargh.github.io
 <h1>Eikkargh Project - GitHub Pages</h1>
 <h2>Current Projects:</h2>
 <ul>
