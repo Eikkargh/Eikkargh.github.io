@@ -90,15 +90,17 @@ function getDaysLog() {
 function setCoin(id) {
 	updateCookie(id);
 	let coin = id.substring(2);
-	let coins = [coin];
 	let st = parseInt(document.getElementById('st'+coin).value);
 	let cu = parseInt(document.getElementById('cu'+coin).value);
 	let sp = parseInt(document.getElementById('sp'+coin).value);		
-	if ( !!st && !!cu && !!sp && !!dayslog ) {
+	if ( !!st && !!cu && !!dayslog ) {
 		let x = Math.floor((cu - st + sp) / dayslog);
+		console.log("setCoin x: "+ x);
 		document.getElementById('rate'+coin).innerHTML = x;
 		if ( !!rdays ) {
 			let y = Math.floor((x * rdays) + cu);
+			console.log("setCoin y: "+ y);
+			document.getElementById('rate'+coin).innerHTML = y;
 		}
 	}
 }
@@ -119,9 +121,11 @@ function updateCoin() {
 		}
 		if ( !!st && !!cu && !!dayslog ) {
 			let x = Math.floor((cu - st + sp) / dayslog);
+			console.log("updateCoin x: "+ x);
 			document.getElementById('rate' + coin).innerHTML = x;
 			if ( !!rdays ) {
 				let y = Math.floor((x * rdays) + cu);
+				console.log("updateCoin y: "+ y);
 				document.getElementById('pred' + coin).innerHTML = y;
 			}
 		}
