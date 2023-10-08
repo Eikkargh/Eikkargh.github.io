@@ -100,7 +100,7 @@ function setCoin(id) {
 		if ( !!rdays ) {
 			let y = Math.floor((x * rdays) + cu);
 			console.log("setCoin y: "+ y);
-			document.getElementById('rate'+coin).innerHTML = y;
+			document.getElementById('pred'+coin).innerHTML = y;
 		}
 	}
 }
@@ -122,11 +122,11 @@ function updateCoin() {
 		if ( !!st && !!cu && !!dayslog ) {
 			let x = Math.floor((cu - st + sp) / dayslog);
 			console.log("updateCoin x: "+ x);
-			document.getElementById('rate' + coin).innerHTML = x;
+			document.getElementById('rate'+coin).innerHTML = x;
 			if ( !!rdays ) {
 				let y = Math.floor((x * rdays) + cu);
 				console.log("updateCoin y: "+ y);
-				document.getElementById('pred' + coin).innerHTML = y;
+				document.getElementById('pred'+coin).innerHTML = y;
 			}
 		}
 	}
