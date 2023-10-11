@@ -72,6 +72,7 @@ function getTodaysDate() {
 }
 function getDaysRem() {
 	let xaim = document.getElementById("xaim").value;
+	console.log("xaim="+xaim);
 	let xtar = "";
 	if (xaim == "on") {
 		xtar = document.getElementById("xstart").value;
