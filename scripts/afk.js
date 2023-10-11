@@ -72,10 +72,11 @@ function getTodaysDate() {
 }
 function getDaysRem() {
 	let xaim = document.getElementById("xaim").value;
+	let xtar = "";
 	if (xaim == "on") {
-		let xtar = document.getElementById("xstart").value;
+		xtar = document.getElementById("xstart").value;
 	} else {
-		let xtar = document.getElementById("xend").value;
+		xtar = document.getElementById("xend").value;
 	}
 	if ( xtar != null && xtar != "" ){
 		updateCookie('xstart');
