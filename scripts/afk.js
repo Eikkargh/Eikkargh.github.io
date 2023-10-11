@@ -71,10 +71,10 @@ function getTodaysDate() {
 	return today;
 }
 function getDaysRem() {
-	let xaim = document.getElementById("xaim").value;
+	let xaim = document.getElementById("xaim").checked;
 	console.log("xaim="+xaim);
 	let xtar = "";
-	if (xaim == "on") {
+	if (xaim) {
 		xtar = document.getElementById("xstart").value;
 	} else {
 		xtar = document.getElementById("xend").value;
