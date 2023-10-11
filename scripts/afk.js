@@ -1,6 +1,7 @@
 let varSave = {
 	"xstart":null,
 	"xend":null,
+	"xtar":null,
 	"rstart":null,
 	"sthero":null,
 	"stguild":null,
@@ -70,11 +71,18 @@ function getTodaysDate() {
 	return today;
 }
 function getDaysRem() {
-	let xend = document.getElementById("xend").value;
-	if ( xend != null && xend != "" ){
+	let xaim = document.getElementById("xaim").value;
+	if (xaim == "on") {
+		let xtar = document.getElementById("xstart").value;
+	} else {
+		let xtar = document.getElementById("xend").value;
+	}
+	if ( xtar != null && xtar != "" ){
+		updateCookie('xstart');
 		updateCookie('xend');
-		let xendint = Math.floor(new Date(xend));
-		rdays = (xendint - getTodaysDate()) / 86400000 - 1;
+		updateCookie('xtar');
+		let xtarint = Math.floor(new Date(xtar));
+		rdays = (xtarint - getTodaysDate()) / 86400000 - 1;
 		document.getElementById("rdays").innerHTML = rdays;
 	}
 }
