@@ -47,8 +47,12 @@ function checkCookie() {
 		for (let i = 0; i < keys.length; i++) {
 			let key = keys[i];
 			let value = varSave[key];
-			if (value != null) {
-				document.getElementById(key).value = value;
+			if (key == "xaim") {
+				document.getElementById('xaim').checked = value;
+			} else {
+				if (value != null) {
+					document.getElementById(key).value = value;
+				}
 			}
 		}
 		getDaysRem();
@@ -72,7 +76,6 @@ function getTodaysDate() {
 }
 function getDaysRem() {
 	let xaim = document.getElementById("xaim").checked;
-	console.log("xaim="+xaim);
 	let xtar = "";
 	if (xaim) {
 		xtar = document.getElementById("xstart").value;
@@ -86,6 +89,7 @@ function getDaysRem() {
 		let xtarint = Math.floor(new Date(xtar));
 		rdays = (xtarint - getTodaysDate()) / 86400000 - 1;
 		document.getElementById("rdays").innerHTML = rdays;
+		updateCoin();
 	}
 }
 function getDaysLog() {
