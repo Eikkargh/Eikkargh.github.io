@@ -81,7 +81,7 @@ function getDaysRem() {
 	if ( xtar != null && xtar != "" ){
 		updateCookie('xstart');
 		updateCookie('xend');
-		updateCookie('xtar');
+		updateCookie('xaim');
 		let xtarint = Math.floor(new Date(xtar));
 		rdays = (xtarint - getTodaysDate()) / 86400000 - 1;
 		document.getElementById("rdays").innerHTML = rdays;
