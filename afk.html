@@ -17,9 +17,9 @@
 		<a class="menu-item" href="./disney.html">Disney Heroes</a>
 		<a class="menu-item" href="./contact.html">Contact</a>
 	</div>
+	<div class="project-title"><h1>AFK Arena</h1></div>
 	<div class="project-container">
 		<div class="title-container">
-			<div class="project-title"><h1>AFK Arena</h1></div>
 			<div><h2>Dimensional Calculator (v0.5)</h2></div>
 			<div class="form-container">
 				<form>
@@ -38,6 +38,10 @@
 					<p class="table-row">
 						<label for="xend">Exchange End</label>
 						<input type="date" id="xend" name="xend" onchange="getDaysRem()">
+					</p>
+					<p class="table-row">
+						<label for="xaim">Aim for start</label>
+						<input type="checkbox" id="xaim" name="xaim" onchange="getDaysRem()">
 					</p>
 					<p class="table-row">
 						<span class="table-title">Days Remaining</span>
@@ -90,10 +94,10 @@
 			</tr>
 			<tr>
 				<th>Predicted</th>
-				<td><span id="predhero"></span></td>
-				<td><span id="predguild"></span></td>
-				<td><span id="predlab"></span></td>
-				<td><span id="predchal"></span></td>
+				<td><span class="result" id="predhero"></span></td>
+				<td><span class="result" id="predguild"></span></td>
+				<td><span class="result" id="predlab"></span></td>
+				<td><span class="result" id="predchal"></span></td>
 			</tr>
 			<tr>
 				<th>Max Tokens</th>
@@ -111,10 +115,10 @@
 			</tr>
 			<tr>
 				<th>Max Cost</th>
-				<td>40000</td>
-				<td>40000</td>
-				<td>200000</td>
-				<td>199995</td>
+				<td class="target">40000</td>
+				<td class="target">40000</td>
+				<td class="target">200000</td>
+				<td class="target">199995</td>
 			</tr>
 		</table>
 	</div>

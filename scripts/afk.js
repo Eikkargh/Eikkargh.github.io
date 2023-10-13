@@ -1,6 +1,7 @@
 let varSave = {
 	"xstart":null,
 	"xend":null,
+	"xtar":null,
 	"rstart":null,
 	"sthero":null,
 	"stguild":null,
@@ -46,8 +47,12 @@ function checkCookie() {
 		for (let i = 0; i < keys.length; i++) {
 			let key = keys[i];
 			let value = varSave[key];
-			if (value != null) {
-				document.getElementById(key).value = value;
+			if (key == "xaim") {
+				document.getElementById('xaim').checked = value;
+			} else {
+				if (value != null) {
+					document.getElementById(key).value = value;
+				}
 			}
 		}
 		getDaysRem();
@@ -70,12 +75,21 @@ function getTodaysDate() {
 	return today;
 }
 function getDaysRem() {
-	let xend = document.getElementById("xend").value;
-	if ( xend != null && xend != "" ){
+	let xaim = document.getElementById("xaim").checked;
+	let xtar = "";
+	if (xaim) {
+		xtar = document.getElementById("xstart").value;
+	} else {
+		xtar = document.getElementById("xend").value;
+	}
+	if ( xtar != null && xtar != "" ){
+		updateCookie('xstart');
 		updateCookie('xend');
-		let xendint = Math.floor(new Date(xend));
-		rdays = (xendint - getTodaysDate()) / 86400000 - 1;
+		updateCookie('xaim');
+		let xtarint = Math.floor(new Date(xtar));
+		rdays = (xtarint - getTodaysDate()) / 86400000 - 1;
 		document.getElementById("rdays").innerHTML = rdays;
+		updateCoin();
 	}
 }
 function getDaysLog() {
@@ -94,13 +108,11 @@ function setCoin(id) {
 	let cu = parseInt(document.getElementById('cu'+coin).value);
 	let sp = parseInt(document.getElementById('sp'+coin).value);		
 	if ( !!st && !!cu && !!dayslog ) {
-		let x = Math.floor((cu - st + sp) / dayslog);
-		console.log("setCoin x: "+ x);
-		document.getElementById('rate'+coin).innerHTML = x;
+		let x = parseInt((cu - st + sp) / dayslog);
+		document.getElementById(rateCoin).innerHTML = x;
 		if ( !!rdays ) {
-			let y = Math.floor((x * rdays) + cu);
-			console.log("setCoin y: "+ y);
-			document.getElementById('pred'+coin).innerHTML = y;
+			let y = parseInt((x * rdays) + cu);
+			document.getElementById("pred"+coin).innerHTML = y;
 		}
 	}
 }
@@ -111,21 +123,23 @@ function updateCoin() {
 		["stlab","culab","splab"],
 		["stchal","cuchal","spchal"]
 	]
+	let st = 0;
+	let cu = 0;
+	let sp = 0;
+	let coin = "";
 	for (let i = 0; i < coinsCalc.length; i++){
 		for (let j = 0; j < coinsCalc[i].length; j++) {
 			let name = coinsCalc[i][j];
 			let field = name.substring(0,2);
-			let coin = name.substring(2);
-			let value = varSave[coin];
-			eval(field + "= value");
+			coin = name.substring(2);
+			let value = varSave[field+coin];
+			eval(field + "= parseInt(value)");
 		}
 		if ( !!st && !!cu && !!dayslog ) {
-			let x = Math.floor((cu - st + sp) / dayslog);
-			console.log("updateCoin x: "+ x);
+			let x = parseInt((cu - st + sp) / dayslog);
 			document.getElementById('rate'+coin).innerHTML = x;
 			if ( !!rdays ) {
-				let y = Math.floor((x * rdays) + cu);
-				console.log("updateCoin y: "+ y);
+				let y = parseInt((x * rdays) + cu);
 				document.getElementById('pred'+coin).innerHTML = y;
 			}
 		}
