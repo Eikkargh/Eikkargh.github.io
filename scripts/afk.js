@@ -99,6 +99,7 @@ function getDaysLog() {
 		let rstartint = Math.floor(new Date(rstart));
 		dayslog = (getTodaysDate() - rstartint) / 86400000 + 1;
 		document.getElementById("dayslog").innerHTML = dayslog;
+		daysRem();
 	}
 }
 function setCoin(id) {
