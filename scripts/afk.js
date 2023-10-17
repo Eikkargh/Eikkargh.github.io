@@ -133,15 +133,10 @@ function updateCoin() {
 			let name = coinsCalc[i][j];
 			let field = name.substring(0,2);
 			coin = name.substring(2);
-			let value = varSave[field+coin];
+			let value = varSave[field + coin];
 			eval(field + "= parseInt(value)");
 		}
-		if ( !!st && !!cu && !!dayslog ) {
-			let x = parseInt((cu - st + sp) / dayslog);
-			document.getElementById('rate'+coin).innerHTML = x;
-			if ( !!rdays ) {
-				let y = parseInt((x * rdays) + cu);
-				document.getElementById('pred'+coin).innerHTML = y;
+		setCoin(name);
 			}
 		}
 	}
