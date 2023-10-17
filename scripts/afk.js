@@ -127,16 +127,20 @@ function updateCoin() {
 	let st = 0;
 	let cu = 0;
 	let sp = 0;
-	let coin = "";
 	for (let i = 0; i < coinsCalc.length; i++){
 		for (let j = 0; j < coinsCalc[i].length; j++) {
 			let name = coinsCalc[i][j];
 			let field = name.substring(0,2);
-			coin = name.substring(2);
+			let coin = name.substring(2);
 			let value = varSave[field + coin];
 			eval(field + "= parseInt(value)");
 		}
-		setCoin(name);
+		if ( !!st && !!cu && !!dayslog ) {
+			let x = parseInt((cu - st + sp) / dayslog);
+			document.getElementById(rateCoin).innerHTML = x;
+			if ( !!rdays ) {
+				let y = parseInt((x * rdays) + cu);
+				document.getElementById("pred"+coin).innerHTML = y;
 			}
 		}
 	}
