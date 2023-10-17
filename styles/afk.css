@@ -67,3 +67,7 @@ td{
 .foot-note{
 	display: block;
 }
+.instructions{
+	padding-top: 70px;
+	color: orange;
+}
