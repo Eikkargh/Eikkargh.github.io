@@ -2,8 +2,8 @@
 .projectcontainer{
 	display: block;
 }
-h1{color: white;}
-h2{color: white;}
+h1{color: orange;}
+h2{color: lightblue;}
 #guild-image{
 	float: left;
 	margin: 5px;
