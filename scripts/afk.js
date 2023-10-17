@@ -99,7 +99,7 @@ function getDaysLog() {
 		let rstartint = Math.floor(new Date(rstart));
 		dayslog = (getTodaysDate() - rstartint) / 86400000 + 1;
 		document.getElementById("dayslog").innerHTML = dayslog;
-		daysRem();
+		getDaysRem();
 	}
 }
 function setCoin(id) {
@@ -110,7 +110,7 @@ function setCoin(id) {
 	let sp = parseInt(document.getElementById('sp'+coin).value);		
 	if ( !!st && !!cu && !!dayslog ) {
 		let x = parseInt((cu - st + sp) / dayslog);
-		document.getElementById(rateCoin).innerHTML = x;
+		document.getElementById("rate"+coin).innerHTML = x;
 		if ( !!rdays ) {
 			let y = parseInt((x * rdays) + cu);
 			document.getElementById("pred"+coin).innerHTML = y;
@@ -118,31 +118,8 @@ function setCoin(id) {
 	}
 }
 function updateCoin() {
-	let coinsCalc = [
-		["sthero","cuhero","sphero"],
-		["stguild","cuguild","spguild"],
-		["stlab","culab","splab"],
-		["stchal","cuchal","spchal"]
-	]
-	let st = 0;
-	let cu = 0;
-	let sp = 0;
-	let coin = "";
+	let coinsCalc = ["sthero","stguild","stchal","stlab"]
 	for (let i = 0; i < coinsCalc.length; i++){
-		for (let j = 0; j < coinsCalc[i].length; j++) {
-			let name = coinsCalc[i][j];
-			let field = name.substring(0,2);
-			coin = name.substring(2);
-			let value = varSave[field+coin];
-			eval(field + "= parseInt(value)");
-		}
-		if ( !!st && !!cu && !!dayslog ) {
-			let x = parseInt((cu - st + sp) / dayslog);
-			document.getElementById('rate'+coin).innerHTML = x;
-			if ( !!rdays ) {
-				let y = parseInt((x * rdays) + cu);
-				document.getElementById('pred'+coin).innerHTML = y;
-			}
-		}
+		setCoin(coinsCalc[i]);		
 	}
 }
