@@ -128,7 +128,7 @@ function setCoin(id) {
 			if (curtok > maxtok) {
 				curtok = maxtok;
 			}
-			document.getElementById("curtok"+coin).innerHTML = curtok;
+			document.getElementById("tok"+coin).innerHTML = curtok;
 		}
 	}
 }
