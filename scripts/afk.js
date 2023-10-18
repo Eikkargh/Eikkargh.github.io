@@ -114,6 +114,16 @@ function setCoin(id) {
 		if ( !!rdays ) {
 			let y = parseInt((x * rdays) + cu);
 			document.getElementById("pred"+coin).innerHTML = y;
+			let max = parseInt(document.getElementById("max"+coin).innerHTML);
+			let z = parseInt(y - max);
+			document.getElementById("rem"+coin).innerHTML = z;			
+			let cost = parseInt(document.getElementById("cost"+coin).innerHTML)
+			let maxtok = parseInt(document.getElementById("maxtok"+coin).innerHTML);
+			let pos = parseInt(y / cost)
+			if (pos > maxtok) {
+				pos = maxtok;
+			}
+			document.getElementById("pos"+coin).innerHTML = pos;
 		}
 	}
 }
