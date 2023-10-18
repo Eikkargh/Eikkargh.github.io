@@ -124,6 +124,11 @@ function setCoin(id) {
 				pos = maxtok;
 			}
 			document.getElementById("pos"+coin).innerHTML = pos;
+			let curtok = parseInt(cu / cost);
+			if (curtok > maxtok) {
+				curtok = maxtok;
+			}
+			document.getElementById("curtok"+coin).innerHTML = curtok;
 		}
 	}
 }
