@@ -14,6 +14,9 @@ a:active, a:visited, a:hover, #active {
 	background-color: #ccc;
 	text-decoration: underline;
 }
+.content-link{
+	color: #cb8bf0;
+}
 h{
 	color:white;
 	font-size:36px;
