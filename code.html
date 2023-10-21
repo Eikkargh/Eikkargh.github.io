@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,shrink-to-fit=yes">
+	<link rel="stylesheet" href="./styles/code.css">
+	<link rel="stylesheet" href="./styles/shared.css">
+	<script type="text/javascript" src="./scripts/code.js"></script>
+	<title>Eikkargh Projects - GitHub Pages</title>
+	<style type="text/css" date-late-css> == $0</style>
+</head>
+<body  onload="openCode(event, 'Grecian')">
+	<span class="title-bar"><h>Eikkargh Projects</h></span>
+		<span class="menu-bar">
+			<a class="menu-item" href="./index.html">Home</a>
+			<a class="menu-item" id="active" href="./code.html">Code</a>
+			<a class="menu-item" href="./afk.html">AFK Arena</a>
+			<a class="menu-item" href="./disney.html">Disney Heroes</a>
+			<a class="menu-item" href="./contact.html">Contact</a>
+		</span>
+	</span>
+	<div class="tab">
+		<button class="tablinks" onclick="openCode(event, 'Grecian')"><b>Grecian Computer</b></button>
+	</div>
+	<div id="Grecian" class="tabcontent">
+		<script type="text/javascript" src="./scripts/code/grecian.js"></script>
+		<h2>Grecian Computer</h2>
+		<p>Discovered in a shipwreck off the Greek island of Antikythera in 1901. It consists of 5 disks. The objective is to align the disks so that the sum of each column is 42.</p>
+		<br><br>
+		<img class="disk" id="disk4" src="./images/disk4.png"/>
+		<img class="disk" id="disk3" src="./images/disk3.png"/>
+		<img class="disk" id="disk2" src="./images/disk2.png"/>
+		<img class="disk" id="disk1" src="./images/disk1.png"/>
+		<img class="disk" id="disk0" src="./images/disk0.png"/>
+		<br><br><br>
+		<button class="solve" onclick="rotate(0, true)"><b>Rotate 0</b></button>
+		<button class="solve" onclick="rotate(1, true)"><b>Rotate 1</b></button>
+		<button class="solve" onclick="rotate(2, true)"><b>Rotate 2</b></button>
+		<button class="solve" onclick="rotate(3, true)"><b>Rotate 3</b></button>
+		<button class="solve" onclick="solvePuzzle()"><b>Auto Solve</b></button>
+		<span class="result" id="count">0</span>
+		<span class="result" id="result">Not 42</span>
+	</div>
+</body>

@@ -1,0 +1,78 @@
+
+/* Style the tab */
+.tab {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+  width:900px;
+}
+/* Style the buttons that are used to open the tab content */
+.tab button {
+  background-color: inherit;
+  float: left;
+  border: 2px solid #ccc;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding: 6px 12px 100px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
+  width: 876px;
+}
+
+/* Style other Elements */
+.disk {
+	position: absolute;
+	transition: transform 0.1s ease-in;
+	top: 310px;
+	left: 200px;
+	width: 400px;
+	height: 400px;
+}
+#disk0 { z-index: 50}
+#disk1 { z-index: 40}
+#disk2 { z-index: 30}
+#disk3 { z-index: 20}
+#disk4 { z-index: 10}
+
+.solve {
+	display: block;
+	margin-left: 50px;
+	margin-bottom: 10px;
+	padding: 5px 10px;
+	border: 1px solid #ccc;
+	width: 100px;
+}
+.solve:hover {
+	background-color: #ccc;
+}
+.result {
+	display: block;
+	margin-left: 50px;
+	margin-bottom: 10px;
+	padding: 6px 10px 4px 10px;
+	border: 1px solid #ccc;
+	width: 78px;
+	height: 20px;
+	text-align: center;
+	color: black;
+	background-color: #eb817a;
+/* 	background=color: #89f5a9 */
+	font-weight: bold;
+}
