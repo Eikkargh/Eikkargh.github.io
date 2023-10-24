@@ -25,7 +25,7 @@
 				<form>
 					<p class="table-row">
 						<label for="rstart">Record Start</label>
-						<input type="date" id="rstart" name="rstart" onchange="getDaysLog()">
+						<input type="date" id="rstart" name="rstart" onchange="getDaysLog()"/>
 					</p>
 					<p class="table-row">
 						<span class="table-title">Days Logged</span>
@@ -33,25 +33,29 @@
 					</p>
 					<p class="table-row">
 						<label for="xstart">Exchange Start</label>
-						<input type="date" id="xstart" name="xstart" onchange="getDaysRem()">
+						<input type="date" id="xstart" name="xstart" onchange="getDaysRem()"/>
 					</p>
 					<p class="table-row">
 						<label for="xend">Exchange End</label>
-						<input type="date" id="xend" name="xend" onchange="getDaysRem()">
+						<input type="date" id="xend" name="xend" onchange="getDaysRem()"/>
 					</p>
 					<p class="table-row">
 						<label for="xaim">Aim for start</label>
-						<input type="checkbox" id="xaim" name="xaim" onchange="getDaysRem()">
+						<input type="checkbox" id="xaim" name="xaim" onchange="getDaysRem()"/>
 					</p>
 					<p class="table-row">
 						<span class="table-title">Days Remaining</span>
 						<span class="outputResult" id="rdays"></span>
 					</p>
+					<p class="table-row">
+						<label for="dubdim">Double Dimensional</label>
+						<input type="checkbox" id="dubdim" name="dubdim" onchange="dubDim()"/>
+					</p>
 				</form>
 			</div>
 		</div>
 		<div id="guild-image">
-			<img src="./images/afk.jpg" alt="AFK Arena - The Gory Hole">
+			<img src="./images/afk.jpg" alt="AFK Arena - The Gory Hole"/>
 		</div>
 		<div class="inst"><br><br><br><br>
 			<p class="inst-title">Complete fields to get your predicted coins.</p>
@@ -92,10 +96,10 @@
 			</tr>
 			<tr>
 				<th>Rate Gain/ Day</th>
-				<td><span id="ratehero"></span></td>
-				<td><span id="rateguild"></span></td>
-				<td><span id="ratechal"></span></td>
-				<td><span id="ratelab"></span></td>
+				<td id="ratehero"></td>
+				<td id="rateguild"></td>
+				<td id="ratechal"></td>
+				<td id="ratelab"></td>
 			</tr>
 			<tr>
 				<th>Token Cost</th>
@@ -112,7 +116,7 @@
 				<td id="toklab"></td>
 			</tr>				
 			<tr>
-				<th>Possible Tokens</th>
+				<th>Predicted Tokens</th>
 				<td id="poshero"></td>
 				<td id="posguild"></td>
 				<td id="poschal"></td>
@@ -126,11 +130,11 @@
 				<td id="maxtoklab">50</td>
 			</tr>
 			<tr>
-				<th>Predicted</th>
-				<td><span class="result" id="predhero"></span></td>
-				<td><span class="result" id="predguild"></span></td>
-				<td><span class="result" id="predchal"></span></td>
-				<td><span class="result" id="predlab"></span></td>
+				<th>Predicted Cost</th>
+				<td class="result" id="predhero"></td>
+				<td class="result" id="predguild"></td>
+				<td class="result" id="predchal"></td>
+				<td class="result" id="predlab"></td>
 			</tr>
 			<tr>
 				<th>Max Cost</th>
@@ -141,10 +145,10 @@
 			</tr>
 			<tr>
 				<th>Left to Spend</th>
-				<td><span class="result" id="remhero"></span></td>
-				<td><span class="result" id="remguild"></span></td>
-				<td><span class="result" id="remchal"></span></td>
-				<td><span class="result" id="remlab"></span></td>
+				<td class="result" id="remhero"></td>
+				<td class="result" id="remguild"></td>
+				<td class="result" id="remchal"></td>
+				<td class="result" id="remlab"></td>
 			</tr>
 		</table><br class="clear"><br>
 		<div class="foot-note">

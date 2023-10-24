@@ -20,6 +20,34 @@ let rdays = null;
 let dayslog = null;
 let exdays = 182;
 
+function dubDim() {
+	let dubDim = document.getElementById("dubdim").checked;
+	let coins = ["hero", "guild", "chal", "lab"];
+	if (dubDim) {
+		for (c = 0; c < coins.length; c++) {
+			coin = coins[c];
+			maxTok = parseInt(document.getElementById("maxtok"+coin).innerHTML);
+			maxCost = parseInt(document.getElementById("max"+coin).innerHTML);
+			maxTok = maxTok * 2;
+			maxCost = maxCost * 2;
+			document.getElementById("maxtok"+coin).innerHTML = maxTok;
+			document.getElementById("max"+coin).innerHTML = maxCost;
+			updateCoin();
+		}
+	} else {
+		for (c = 0; c < coins.length; c++) {
+			coin = coins[c];
+			maxTok = parseInt(document.getElementById("maxtok"+coin).innerHTML);
+			maxCost = parseInt(document.getElementById("max"+coin).innerHTML);
+			maxTok = maxTok / 2;
+			maxCost = maxCost / 2;
+			document.getElementById("maxtok"+coin).innerHTML = maxTok;
+			document.getElementById("max"+coin).innerHTML = maxCost;
+			updateCoin();
+		}
+		
+	}
+}
 function getCookie() {
 	let cookie = document.cookie;
 	if (cookie != null && cookie != "") {

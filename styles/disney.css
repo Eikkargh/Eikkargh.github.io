@@ -2,7 +2,7 @@
 .projectcontainer{
 	display: block;
 }
-h1{color: orange;}
+h1{color: #b342f5;}
 h2{
 	color: lightblue;
 }
@@ -21,6 +21,7 @@ h2{
 	width: 900px;
 }
 .form-container{
+	padding-right: 1px;
 	display: table;
 }
 .table-row{
@@ -41,7 +42,10 @@ label{
 	position: center-left;
 	top: 50%;
 }
-.inst-title{color: orange;}
+.inst-title{
+	color: #b342f5;
+	width: 200px;
+}
 /* Content Block */
 .clear{
 	clear: both;
@@ -52,23 +56,22 @@ label{
 	margin-top: 20px;
 	width: 900px;
 }
-table{
-	float: left;
-	border: 1.5px;
-	border-color: white;
-}
 .table-corner{
-	width:130px;
+	width:100px;
 	text-align: center;
 }
 .tt{
 	text-align: center;
+	width: 150px;
 }
 td{
 	text-align: center;
 }
 .outputResult{
 	display: table-cell;
+}
+.current{
+	width:150px;
 }
 .result{
 	color: green;
@@ -78,5 +81,5 @@ td{
 }
 .foot-note{
 	display: block;
+	color:#b342f5;
 }
-
