@@ -1,6 +1,9 @@
 <h1>Eikkargh Project - GitHub Pages</h1>
 <h2>Current Projects:</h2>
 <ul>
+  <li><a href="https://eikkargh.github.io/disney.html"><b>Disney Heroes</a> - Red Skill Calculator</b><br>
+  <b>Active Development:</b> Scripting not yet complete.<br>
+  Uses cookies to store values.</li>
   <li><a href="https://eikkargh.github.io/afk.html"><b>AFK Arena</a> - Dimensional Calculator</b><br>
   <b>Active Functional:</b> Mobile formatting not optimised.<br>
   Uses cookies to store values.</li>
