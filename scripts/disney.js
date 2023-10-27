@@ -33,7 +33,7 @@ function getTarSpare(){
 	for (i = 0; i < resList.length; i++){
 		let res = resList[i];
 		if (!!varSave["cur"+res]){
-			let tar = parseInt(document.getElementById("tar"+res).innerHTML);
+			let tar = tarCost[i];
 			let spare = varSave["cur"+res] - tar;
 			updateHTML("tsp"+res,spare);
 		}
@@ -45,6 +45,7 @@ function getTargetCost(){
 	for (i = 0; i < resList.length; i++){
 		let res = resList[i];
 		let totalRes = cost[res] - spent[res];
+		tarCost[i] = totalRes;
 		updateHTML("tar"+res,totalRes);
 	}
 }
@@ -106,7 +107,7 @@ function checkCookie() {
 				document.getElementById(key).value = value;
 			}
 		}
-		getTarget();
+		getHTML("startlvl");
 	}			
 }
 function updateCookie() {
@@ -119,9 +120,11 @@ function updateCookie() {
 let exdays = 182; /*Cookie expire*/
 const resList = ["hero","skill","gold"];
 let lows = [0,0,0];
+let tarCost = [0,0,0];
 let pos = 0;
 let start = 0;
 let maxlvl = 255;
+
 
 let varSave = {
 	"startlvl":0,
