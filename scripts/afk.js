@@ -53,7 +53,7 @@ function dubDim() {
 function getCookie() {
 	let cookie = document.cookie;
 	if (cookie != null && cookie != "") {
-		let name = "inputFields=";
+		let name = "inputFieldsAFK=";
 		let decodedCookie = decodeURIComponent(document.cookie);
 		let ca = decodedCookie.split(';');
 		for(let i = 0; i < ca.length; i++) {
@@ -97,7 +97,7 @@ function updateCookie(id) {
 	const d = new Date();
 	d.setTime(d.getTime() + (exdays*24*60*60*1000));
 	let expires = "expires="+d.toUTCString();
-	document.cookie = "inputFields=" + cValue + ";" + expires + ";path=/;domain=" + window.location.hostname;
+	document.cookie = "inputFieldsAFK=" + cValue + ";" + expires + ";path=/;domain=" + window.location.hostname;
 }
 function getTodaysDate() {
 	let datestamp = new Date().getTime();

@@ -78,7 +78,7 @@ function updateHTML(field, value){
 function getCookie() {
 	let cookie = document.cookie;
 	if (cookie != null && cookie != "") {
-		let name = "inputFields=";
+		let name = "inputFieldsDisney=";
 		let decodedCookie = decodeURIComponent(document.cookie);
 		let ca = decodedCookie.split(';');
 		for(let i = 0; i < ca.length; i++) {
@@ -115,7 +115,7 @@ function updateCookie() {
 	const d = new Date();
 	d.setTime(d.getTime() + (exdays*24*60*60*1000));
 	let expires = "expires="+d.toUTCString();
-	document.cookie = "inputFields=" + cValue + ";" + expires + ";path=/;domain=" + window.location.hostname;
+	document.cookie = "inputFieldsDisney=" + cValue + ";" + expires + ";path=/;domain=" + window.location.hostname;
 }
 let exdays = 182; /*Cookie expire*/
 const resList = ["hero","skill","gold"];
