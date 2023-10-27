@@ -63,6 +63,7 @@ function getHTML(field){
 	}
 }
 function updateHTML(field, value){
+	if (value == null) value = 0;
 	if (value === true || value === false){
 		document.getElementById(field).checked = value;
 	}else{
@@ -102,7 +103,7 @@ function checkCookie() {
 			let key = keys[i];
 			let value = varSave[key];
 			if (value != null) {
-				updateHTML(key, value);
+				document.getElementById(key).value = value;
 			}
 		}
 		getTarget();
