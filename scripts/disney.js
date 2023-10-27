@@ -2,9 +2,6 @@ function sellSkills(){
 	let curSkill = varSave["curskill"]
 	let maxSkill = redSkill[maxlvl]["skill"];
 	let sellSkill = curSkill - maxSkill;
-	console.log(curSkill);
-	console.log(maxSkill);
-	console.log(sellSkill);
 	if (sellSkill < 0) sellSkill = 0;
 	updateHTML("sellskill",sellSkill);
 	let goldProfit = sellSkill * 4000;
