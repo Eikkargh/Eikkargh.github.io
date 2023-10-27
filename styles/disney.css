@@ -31,10 +31,13 @@ h2{
 	font-weight: bold;
 	padding: 5px 20px;
 }
-label{
+label, .label{
 	display: table-cell;
 	padding: 5px 20px;
 	font-weight: bold;
+}
+.cell{
+	width:105px;
 }
 .inst{
 	display: inline-block;

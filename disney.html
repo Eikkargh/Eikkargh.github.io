@@ -6,9 +6,10 @@
 	<link rel="stylesheet" href="./styles/disney.css">
 	<link rel="stylesheet" href="./styles/shared.css">
 	<title>Eikkargh Projects - GitHub Pages</title>
+	<script type="text/javascript" src="./scripts/disney.js"></script>
 	<style type="text/css" date-late-css> == $0</style>
 </head>
-<body>
+<body onload="checkCookie()">
 	<span class="title-bar"><h>Eikkargh Projects</h></span>
 	<span class="menu-bar">
 		<a class="menu-item" id="active" href="./index.html">Home</a>
@@ -20,20 +21,20 @@
 	<div class="project-title"><h1>Disney Heroes</h1></div>
 	<div class="project-container">
 		<div class="title-container">
-			<div><h2>Red Skill Calculator</h2></div>
+			<div><h2>Red Skill Calculator (v0.6)</h2></div>
 			<div class="form-container">
 				<form>
 					<p class="table-row">
 						<label for="startlvl">Starting Level</label>
-						<input type="number" id="startlvl" name="startlvl"/>
+						<input class="cell" type="number" id="startlvl" name="startlvl" onchange="getHTML('startlvl')" value="0"/>
 					</p>
 					<p class="table-row">
 						<label for="tarlvl">Target Level</label>
-						<input type="tarlvl" id="tarlvl" name="tarlvl"/>
+						<input class="cell" type="number" id="tarlvl" name="tarlvl" onchange="getHTML('tarlvl')" value="0"/>
 					</p>
 					<p class="table-row">
-						<label for="sellchips">Sell Spare Chips</label>
-						<input type="checkbox" id="sellchips" name="sellchips"/>
+						<span class="label">Possible Level</span>
+						<span class="result" id="poslvl" name="poslvl"></span>
 					</p>
 				</form>
 			</div>					
@@ -42,7 +43,7 @@
 			<img src="./images/disney.png" alt="Disney Heroes - Confused Island" style="width:300px;height:180px;"/>
 		</div>
 		<div class="inst"><br><br><br><br>
-			<p class="inst-title">Complete fields to calculate resources needed for max level.</p>
+			<p class="inst-title">Complete fields to calculate resources needed for target level.</p>
 		</div>
 	</div>
 	<br class="clear">
@@ -51,31 +52,44 @@
 			<tr>
 				<th class="table-corner"></th>
 				<th class="tt">Current</th>
-				<th class="tt">Max</th>
-				<th class="tt">Spare</th>
+				<th class="tt">Target Cost</th>
+				<th class="tt">Target Spare</th>
+				<th class="tt">Max Level Cost</th>
 			</tr>
 			<tr>
 				<th>Hero Chips</th>
-				<td><input class="current" type="number" id="curhero" name="curhero"/></td>
+				<td><input class="current" type="number" id="curhero" name="curhero" value="0" onchange="getHTML('curhero')"/></td>
+				<td class="result" id="tarhero"></td>
+				<td class="result" id="tsphero"></td>
 				<td class="result" id="maxhero"></td>
-				<td class="result" id="sparehero"></td>
 			</tr>
 			<tr>
 				<th>Skill Chips</th>
-				<td><input class="current" type="number" id="curskill" name="curskill"/></td>
+				<td><input class="current" type="number" id="curskill" name="curskill" value="0" onchange="getHTML('curskill')"/></td>
+				<td class="result" id="tarskill"></td>
+				<td class="result" id="tspskill"></td>
 				<td class="result" id="maxskill"></td>
-				<td class="result" id="spareskill"></td>
 			</tr>
 			<tr>
 				<th>Gold</th>
-				<td><input class="current" type="number" id="curgold" name="curgold"/></td>
+				<td><input class="current" type="number" id="curgold" name="curgold" value="0" onchange="getHTML('curgold')"/></td>
+				<td class="result" id="targold"></td>
+				<td class="result" id="tspgold"></td>
 				<td class="result" id="maxgold"></td>
-				<td class="result" id="sparegold"></td>
 			</tr>
 		</table><br class="clear"><br>
+		<div>
+			<p class="table-row">
+				<span class="label">Sellable Skill Chips</span>
+				<span class="result" id="sellskill"></span>
+			</p>
+			<p class="table-row">
+				<span class="label">Gold Profit</span>
+				<span class="result" id="profitgold"></span>
+			</p>
+		</div><br class="clear><br>
 		<div class="foot-note">
 			<p>Page uses cookies to store values. No personal data or 3rd party cookies are used.</p>
 		</div>
 	</div>
 </body>
-			

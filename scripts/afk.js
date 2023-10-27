@@ -2,6 +2,8 @@ let varSave = {
 	"xstart":null,
 	"xend":null,
 	"xtar":null,
+	"xaim":null,
+	"dubdim":null,
 	"rstart":null,
 	"sthero":null,
 	"stguild":null,
@@ -75,8 +77,8 @@ function checkCookie() {
 		for (let i = 0; i < keys.length; i++) {
 			let key = keys[i];
 			let value = varSave[key];
-			if (key == "xaim") {
-				document.getElementById('xaim').checked = value;
+			if (key == "xaim" || key == "dubdim") {
+				document.getElementById(key).checked = value;
 			} else {
 				if (value != null) {
 					document.getElementById(key).value = value;
