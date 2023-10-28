@@ -123,7 +123,7 @@ let lows = [0,0,0];
 let tarCost = [0,0,0];
 let pos = 0;
 let start = 0;
-let maxlvl = 255;
+let maxlvl = 265;
 
 
 let varSave = {
@@ -1414,5 +1414,54 @@ var redSkill = [
 	   "hero": 4406,
 	   "skill": 34370,
 	   "gold": 534002000
-	 }
-	];
+	 },
+	 {
+	   "hero": 4436,
+	   "skill": 34635,
+	   "gold": 540462000
+	 },
+	 {
+	   "hero": 4466,
+	   "skill": 34900,
+	   "gold": 546982000
+	 },
+	 {
+	   "hero": 4496,
+	   "skill": 35165,
+	   "gold": 553552000
+	 },
+	 {
+	   "hero": 4526,
+	   "skill": 35430,
+	   "gold": 560162000
+	 },
+	 {
+	   "hero": 4556,
+	   "skill": 35695,
+	   "gold": 566822000
+	 },
+	 {
+	   "hero": 4587,
+	   "skill": 35965,
+	   "gold": 573542000
+	 },
+	 {
+	   "hero": 4618,
+	   "skill": 36235,
+	   "gold": 580302000
+	 },
+	 {
+	   "hero": 4649,
+	   "skill": 36505,
+	   "gold": 587112000
+	 },
+	 {
+	   "hero": 4680,
+	   "skill": 36775,
+	   "gold": 593962000
+	 },
+	 {
+	   "hero": 4711,
+	   "skill": 37045,
+	   "gold": 600872000
+	 }];
