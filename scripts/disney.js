@@ -70,6 +70,7 @@ function updateHTML(field, value){
 	}else{
 		let valueFormatted = value.toLocaleString('en-GB');
 		if (field.substring(field.length-4) == "gold") valueFormatted = valueFormatted+"g";
+		console.log("field:" + field + " valueFormatted:" + valueFormatted);
 		document.getElementById(field).innerHTML = valueFormatted;
 	}
 	let stylise = document.getElementById(field); 
@@ -104,7 +105,6 @@ function checkCookie() {
 			let key = keys[i];
 			let value = varSave[key];
 			if (value != null && key != null) {
-				console.log("key:" + key + " value:" + value );
 				document.getElementById(key).value = value;
 			}
 		}
