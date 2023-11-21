@@ -105,6 +105,7 @@ function checkCookie() {
 			let key = keys[i];
 			let value = varSave[key];
 			if (value != null && key != null) {
+				console.log("key:" + key + " value:" + value);
 				document.getElementById(key).value = value;
 			}
 		}
