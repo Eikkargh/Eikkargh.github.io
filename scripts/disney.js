@@ -130,7 +130,7 @@ let maxlvl = 265;
 let varSave = {
 	"startlvl":0,
 	"tarlvl":0,
-	"sellskills":0,
+	"sellskill":0,
 	"curhero":0,
 	"curskill":0,
 	"curgold":0
