@@ -70,8 +70,8 @@ function getCookie() {
 	}
 }
 function checkCookie() {
-	document.getElementById(xstart).value = "2023-12-03";
-	document.getElementById(xend).value = "2023-12-10";
+	document.getElementById(xstart).innerHTML = "2023-12-03";
+	document.getElementById(xend).innerHTML = "2023-12-10";
 	let valueStr = getCookie();
 	if (valueStr != "" && valueStr != undefined) {
 		varSave = JSON.parse(valueStr);
