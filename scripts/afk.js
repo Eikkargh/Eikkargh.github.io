@@ -52,7 +52,6 @@ function dubDim() {
 }
 function getCookie() {
 	let cookie = document.cookie;
-	console.log(cookie);
 	if (cookie != null && cookie != "") {
 		let name = "inputFieldsAFK=";
 		let decodedCookie = decodeURIComponent(document.cookie);
@@ -60,6 +59,7 @@ function getCookie() {
 		for(let i = 0; i < ca.length; i++) {
 			let c = ca[i];
 			while (c.charAt(0) == ' ') {
+				console.log(c);
 				c = c.substing(1);
 			}
 			if (c.indexOf(name) == 0) {
