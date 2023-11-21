@@ -58,8 +58,8 @@ function getCookie() {
 		let ca = decodedCookie.split(';');
 		for(let i = 0; i < ca.length; i++) {
 			let c = ca[i];
+			console.log(c);
 			while (c.charAt(0) == ' ') {
-				console.log(c);
 				c = c.substing(1);
 			}
 			if (c.indexOf(name) == 0) {
